@@ -1,0 +1,17 @@
+{
+  "name": "@technikhil314/carousel-webcomponent",
+  "version": "1.0.0",
+  "description": "A framework agnostic, light weight, touch friendly carousel compoent",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "carousel",
+    "web",
+    "component",
+    "slide"
+  ],
+  "author": "Nikhil Mehta",
+  "license": "MIT"
+}
