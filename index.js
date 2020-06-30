@@ -32,10 +32,12 @@ class CarouselComponent extends HTMLElement {
             }
         `;
         document.head.appendChild(style);
+    }
+
+    extractOptions() {
         this.mode = this.getAttribute("mode") || DEFAULT_PROPS.MODE;
         this.speed = (+this.getAttribute("speed") || DEFAULT_PROPS.SPEED) * 1000;
         this.templateId = this.getAttribute("template-id");
-        console.log(this, "ctor");
     }
     infinite() {
         const firstCarouselItem = this.carouselContainerElement.children[0];
@@ -64,6 +66,7 @@ class CarouselComponent extends HTMLElement {
         }
     }
     connectedCallback() {
+        this.extractOptions();
         let template = document.getElementById(this.templateId);
         let templateContent = template.content.cloneNode(true);
         this.numberOfCarouselItems = templateContent.children.length;
@@ -73,7 +76,6 @@ class CarouselComponent extends HTMLElement {
         this.carouselContainerElement = this.querySelector('.carouselWrapper');
         this.carouselContainerElement.append(templateContent);
         this.appendChild(this.carouselContainerElement);
-        console.log(this, "connectedCallback");
         if (this.numberOfCarouselItems > 1) {
             setInterval(() => {
                 this.carouselItemWidth =
