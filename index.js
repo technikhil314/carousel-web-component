@@ -4,10 +4,10 @@ const DEFAULT_PROPS = {
     MODE: "MODE_ALTERNATE"
 }
 class CarouselComponent extends HTMLElement {
-    direction = 1;
     constructor() {
         super();
         const style = document.createElement('style');
+        this.direction = 1;
         style.innerHTML = `
             .carouselWrapper {
                 display: flex;
