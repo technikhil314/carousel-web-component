@@ -1,1 +1,7 @@
+.gitignore
+.travis.yml
 index.html
+index.js
+package-lock.json
+styles.scss
+webpack.config.js
