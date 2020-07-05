@@ -9,7 +9,6 @@ jobs:
 
 deploy:
   provider: npm
-  email: $NPM_LOGIN_EMAIL
-  api_key: $NPM_AUTH_TOKEN
-  on:
-    tags: true
+  skip_cleanup: true
+  email: "$NPM_LOGIN_EMAIL"
+  api_key: "$NPM_AUTH_TOKEN"
