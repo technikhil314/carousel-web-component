@@ -1,46 +1,23 @@
+import "./styles.scss";
 
 const DEFAULT_PROPS = {
     SPEED: 3,
-    MODE: "MODE_ALTERNATE"
+    MODE: "MODE_ALTERNATE",
 }
 class CarouselComponent extends HTMLElement {
     constructor() {
         super();
-        const style = document.createElement('style');
+        this.options = {};
         this.direction = 1;
-        style.innerHTML = `
-            .carouselWrapper {
-                display: flex;
-                margin: 0 auto;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                scrollbar-width: 0;
-                -ms-scroll-snap-type: x mandatory;
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                -ms-overflow-style: none;
-                overflow: -moz-scrollbars-none;
-                scrollbar-color: transparent transparent;
-            }
-            .carouselWrapper::-webkit-scrollbar {
-                display: none
-            }
-            .carouselWrapper div {
-                flex: 0 0 100%;
-                scroll-snap-align: center;
-                width: 100vw;
-            }
-        `;
-        document.head.appendChild(style);
     }
 
     extractOptions() {
-        this.mode = this.getAttribute("mode") || DEFAULT_PROPS.MODE;
-        this.speed = (+this.getAttribute("speed") || DEFAULT_PROPS.SPEED) * 1000;
-        this.templateId = this.getAttribute("template-id");
+        this.options.mode = this.getAttribute("mode") || DEFAULT_PROPS.MODE;
+        this.options.speed = (+this.getAttribute("speed") || DEFAULT_PROPS.SPEED) * 1000;
+        this.options.templateId = this.getAttribute("template-id");
     }
     infinite() {
-        const firstCarouselItem = this.carouselContainerElement.children[0];
+        const firstCarouselItem = this.carouselContainerElement.querySelector('.carouselItem');
         if (
             this.carouselContainerElement.scrollLeft >=
             (this.numberOfCarouselItems - 1) * this.carouselItemWidth
@@ -67,22 +44,34 @@ class CarouselComponent extends HTMLElement {
     }
     connectedCallback() {
         this.extractOptions();
-        let template = document.getElementById(this.templateId);
+        let template = document.getElementById(this.options.templateId);
         let templateContent = template.content.cloneNode(true);
         this.numberOfCarouselItems = templateContent.children.length;
         this.innerHTML = `
-        <div class="carouselWrapper"></div>
+            <div class="carouselWrapper">
+                <div class="carouselContainer">
+                    <button
+                        aria-label="Show previous"
+                        class="button is-text carouselControl carouselControlPrev"
+                    ></button>
+                    <button
+                        aria-label="Show next"
+                        class="button is-text carouselControl carouselControlNext"
+                    ></button>
+                </div>
+            </div>
         `;
-        this.carouselContainerElement = this.querySelector('.carouselWrapper');
-        this.carouselContainerElement.append(templateContent);
-        this.appendChild(this.carouselContainerElement);
+        this.carouselWrapperElement = this.querySelector('.carouselWrapper');
+        this.carouselContainerElement = this.querySelector('.carouselContainer');
+        this.carouselContainerElement.prepend(templateContent);
+        this.appendChild(this.carouselWrapperElement);
         if (this.numberOfCarouselItems > 1) {
             setInterval(() => {
                 this.carouselItemWidth =
                     this.carouselContainerElement.scrollWidth / this.numberOfCarouselItems;
                 this.carouselContainerElement.scrollBy(this.direction * this.carouselItemWidth, 0);
                 const timeoutId = setTimeout(() => {
-                    switch (this.mode) {
+                    switch (this.options.mode) {
                         case "MODE_INFINITE":
                             this.infinite();
                             break;
@@ -94,8 +83,8 @@ class CarouselComponent extends HTMLElement {
                             break;
                     }
                     clearTimeout(timeoutId);
-                }, this.speed / 2);
-            }, this.speed);
+                }, this.options.speed / 2);
+            }, this.options.speed);
         }
     }
 }

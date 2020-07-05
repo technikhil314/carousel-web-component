@@ -1,0 +1,15 @@
+jobs:
+    include:
+    -   language: node_js
+        node_js:
+            - 12.16.1
+        stage: build
+        script: 
+        - npm run build
+
+deploy:
+  provider: npm
+  email: $NPM_LOGIN_EMAIL
+  api_key: $NPM_AUTH_TOKEN
+  on:
+    tags: true

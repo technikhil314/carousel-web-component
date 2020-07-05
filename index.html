@@ -5,27 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel WebComponent</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        html {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
 </head>
 
 <body>
-    <template id="carouselItems">
-        <div>
-            <h1>Carousel Item 1</h1>
-        </div>
-        <div>
-            <h1>Carousel Item 2</h1>
-        </div>
-        <div>
-            <h1>Carousel Item 3</h1>
-        </div>
-    </template>
-    <carousel-component mode="MODE_INFINITE" template-id="carouselItems">
+    <h1>Infinite scroll</h1>
+    <carousel-component mode="MODE_INFINITE" template-id="carouselItems1">
+        <template id="carouselItems1">
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/FFFF00/000000/?text=Carousel+Item+11" alt="" />
+            </div>
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/FF0000/FFFFFF/?text=Carousel+Item+12" alt="" />
+            </div>
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/00FF00/000000?text=Carousel+Item+13" alt="" />
+            </div>
+        </template>
     </carousel-component>
-    <carousel-component mode="MODE_ALTERNATE" template-id="carouselItems">
+    <h1>Alternate scroll</h1>
+    <carousel-component mode="MODE_ALTERNATE" template-id="carouselItems2">
+        <template id="carouselItems2">
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/FFFF00/000000/?text=Carousel+Item+21" alt="" />
+            </div>
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/FF0000/FFFFFF/?text=Carousel+Item+22" alt="" />
+            </div>
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/00FF00/000000?text=Carousel+Item+23" alt="" />
+            </div>
+        </template>
     </carousel-component>
-    <carousel-component mode="MODE_RESTART" template-id="carouselItems">
+    <h1>Restart scroll</h1>
+    <carousel-component mode="MODE_RESTART" template-id="carouselItems3">
+        <template id="carouselItems3">
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/FFFF00/000000/?text=Carousel+Item+31" alt="" />
+            </div>
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/FF0000/FFFFFF/?text=Carousel+Item+32" alt="" />
+            </div>
+            <div class="carouselItem">
+                <img height="100px" width="100%"
+                    src="//via.placeholder.com/1000x100/00FF00/000000?text=Carousel+Item+33" alt="" />
+            </div>
+        </template>
     </carousel-component>
-    <script src="./index.js" type="module"></script>
 </body>
 
 </html>
