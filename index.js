@@ -4,11 +4,19 @@ const DEFAULT_PROPS = {
     SPEED: 3,
     MODE: "MODE_ALTERNATE",
 }
+let index = 0;
 class CarouselComponent extends HTMLElement {
     constructor() {
         super();
         this.options = {};
         this.direction = 1;
+        window.onfocus = () => {
+            this.startCarousel();
+        }
+
+        window.onblur = () => {
+            this.stopCarousel();
+        }
     }
 
     extractOptions() {
@@ -17,17 +25,16 @@ class CarouselComponent extends HTMLElement {
         this.options.templateId = this.getAttribute("template-id");
     }
     infinite() {
-        const firstCarouselItem = this.carouselContainerElement.querySelector('.carouselItem');
-        if (
-            this.carouselContainerElement.scrollLeft >=
-            (this.numberOfCarouselItems - 1) * this.carouselItemWidth
-        ) {
-            firstCarouselItem.style.order =
-                +firstCarouselItem.style.order === 0 ? 1 : 0;
-        }
+        index = index % this.numberOfCarouselItems;
+        let childToMove = this.carouselContainerElement.querySelectorAll(`.carouselItem`)[index];
+        childToMove.style.order = childToMove.style.order && childToMove.style.order === 0 ? 1 : +childToMove.style.order + 1;
+        index++;
     }
     alternate() {
-        if (this.carouselContainerElement.scrollLeft >= (this.numberOfCarouselItems - 1) * this.carouselItemWidth) {
+        if (
+            this.carouselContainerElement.scrollWidth - this.carouselContainerElement.scrollLeft <
+            2 * this.carouselItemWidth
+        ) {
             this.direction = -1;
         }
         if (this.carouselContainerElement.scrollLeft === 0) {
@@ -36,17 +43,46 @@ class CarouselComponent extends HTMLElement {
     }
 
     restart() {
-        if (this.carouselContainerElement.scrollLeft >= (this.numberOfCarouselItems - 1) * this.carouselItemWidth) {
+        if (
+            this.carouselContainerElement.scrollWidth - this.carouselContainerElement.scrollLeft <
+            2 * this.carouselItemWidth
+        ) {
             setTimeout(() => {
                 this.carouselContainerElement.scrollTo(0, 0);
             }, this.speed / 2);
         }
     }
+
+    startCarousel() {
+        if (this.numberOfCarouselItems <= 1) {
+            return;
+        }
+        this.carouselIntervalId = setInterval(() => {
+            this.carouselItemWidth =
+                this.carouselContainerElement.scrollWidth / this.numberOfCarouselItems;
+            this.carouselContainerElement.scrollBy(this.direction * this.carouselItemWidth, 0);
+            switch (this.options.mode) {
+                case "MODE_INFINITE":
+                    this.infinite();
+                    break;
+                case "MODE_ALTERNATE":
+                    this.alternate();
+                    break;
+                case "MODE_RESTART":
+                    this.restart();
+                    break;
+            }
+        }, this.options.speed);
+    }
+
+    stopCarousel() {
+        clearInterval(this.carouselIntervalId);
+    }
+
     connectedCallback() {
         this.extractOptions();
-        let template = document.getElementById(this.options.templateId);
-        let templateContent = template.content.cloneNode(true);
-        this.numberOfCarouselItems = templateContent.children.length;
+        this.numberOfCarouselItems = this.children.length;
+        const childNodes = [...this.childNodes];
         this.innerHTML = `
             <div class="carouselWrapper">
                 <div class="carouselContainer">
@@ -63,29 +99,11 @@ class CarouselComponent extends HTMLElement {
         `;
         this.carouselWrapperElement = this.querySelector('.carouselWrapper');
         this.carouselContainerElement = this.querySelector('.carouselContainer');
-        this.carouselContainerElement.prepend(templateContent);
         this.appendChild(this.carouselWrapperElement);
-        if (this.numberOfCarouselItems > 1) {
-            setInterval(() => {
-                this.carouselItemWidth =
-                    this.carouselContainerElement.scrollWidth / this.numberOfCarouselItems;
-                this.carouselContainerElement.scrollBy(this.direction * this.carouselItemWidth, 0);
-                const timeoutId = setTimeout(() => {
-                    switch (this.options.mode) {
-                        case "MODE_INFINITE":
-                            this.infinite();
-                            break;
-                        case "MODE_ALTERNATE":
-                            this.alternate();
-                            break;
-                        case "MODE_RESTART":
-                            this.restart();
-                            break;
-                    }
-                    clearTimeout(timeoutId);
-                }, this.options.speed / 2);
-            }, this.options.speed);
+        for (var i = 0; i < childNodes.length; i++) {
+            this.carouselContainerElement.appendChild(childNodes[i])
         }
+        this.startCarousel();
     }
 }
 

@@ -19,8 +19,10 @@
     }
 
     .carouselItem {
-        flex: 0 0 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
         scroll-snap-align: center;
+        transition: all 1s;
     }
 }
 
