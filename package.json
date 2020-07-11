@@ -5,6 +5,7 @@
   "description": "A framework agnostic, light weight, touch friendly carousel compoent with no third party dependancies",
   "scripts": {
     "build": "npx rimraf dist && npx webpack",
+    "clean": "npx rimraf dist",
     "start": "npx webpack-dev-server"
   },
   "main": "dist/index.min.js",

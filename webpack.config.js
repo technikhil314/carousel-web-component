@@ -40,7 +40,6 @@ module.exports = {
     plugins: [
         new CopyPlugin({
             patterns: [
-                { from: 'index.js', to: 'index.js' },
                 { from: 'styles.scss', to: 'styles.scss' }
             ],
         }),
@@ -54,6 +53,8 @@ module.exports = {
     ],
     devtool: 'source-map',
     devServer: {
-        port: 3000
+        port: 3000,
+        hot: true,
+        open: true
     }
 }
