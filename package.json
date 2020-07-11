@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@technikhil/carousel-webcomponent",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A framework agnostic, light weight, touch friendly carousel compoent with no third party dependancies",
   "scripts": {
     "build": "npx rimraf dist && npx webpack",
