@@ -43,14 +43,14 @@ module.exports = {
                 { from: 'styles.scss', to: 'styles.scss' }
             ],
         }),
-        new HtmlWebpackPlugin({
+        process.env.WEBPACK_DEV_SERVER && new HtmlWebpackPlugin({
             template: "./index.html",
             minify: true
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.css',
         })
-    ],
+    ].filter(Boolean),
     devtool: 'source-map',
     devServer: {
         port: 3000,
