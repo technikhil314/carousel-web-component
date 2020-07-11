@@ -1,3 +1,10 @@
+<style>
+    td, th {
+        text-align: center;
+    }
+</style>
+
+
 # Carousel Web Component
 #### **A tiny(1.2Kb), framework agnostic, light weight, zero dependancy, touch friendly carousel component**
 
