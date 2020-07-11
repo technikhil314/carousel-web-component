@@ -1,5 +1,5 @@
 # Carousel Web Component
-### **A tiny(1.2Kb), framework agnostic, light weight, zero dependancy, touch friendly carousel component**
+#### **A tiny(1.2Kb), framework agnostic, light weight, zero dependancy, touch friendly carousel component**
 
 ## Why?
 Most of the carousel components out there do not leverage latest css and javascript features like css scroll snap, flex order and webcomponents etc. Using these features makes carousel much more eligent, reliable, light weight and framework agnostic
