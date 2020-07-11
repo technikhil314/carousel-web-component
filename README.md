@@ -18,4 +18,4 @@ Most of the carousel components out there do not leverage latest css and javascr
 Latest :heavy_check_mark: | Latest :heavy_check_mark: | No :x: | Latest :heavy_check_mark: | Latest+ :heavy_check_mark: | Latest+ :heavy_check_mark:
 
 ## Documentation / How to use / Options / Customisation
-The documentation is [hosted here](https://technikhil314.surge.sh/carousel/)
+The documentation is [hosted here](https://technikhil314.surge.sh/docs/carousel/introduction)
