@@ -2,7 +2,7 @@
   "private": false,
   "name": "@technikhil/carousel-webcomponent",
   "version": "1.0.5",
-  "description": "A framework agnostic, light weight, touch friendly carousel compoent with no third party dependancies",
+  "description": "A tiny(1.2Kb), framework agnostic, light weight, zero dependancy, touch friendly carousel component",
   "scripts": {
     "build": "npx rimraf dist && npx webpack",
     "clean": "npx rimraf dist",
@@ -18,6 +18,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technikhil314/carousel-web-component"
+  },
+  "bugs": {
+    "url": "https://github.com/technikhil314/carousel-web-component/issues"
+  },
+  "homepage": "https://technikhil314.surge.sh/carousel/",
   "author": "Nikhil Mehta",
   "license": "MIT",
   "devDependencies": {
