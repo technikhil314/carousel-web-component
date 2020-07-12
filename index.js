@@ -100,6 +100,12 @@ class CarouselComponent extends HTMLElement {
         this.carouselWrapperElement = this.querySelector('.carouselWrapper');
         this.carouselContainerElement = this.querySelector('.carouselContainer');
         this.appendChild(this.carouselWrapperElement);
+        this.querySelector(".carouselControlNext").addEventListener("click", () => {
+            this.carouselContainerElement.scrollBy(this.carouselItemWidth, 0);
+        });
+        this.querySelector(".carouselControlPrev").addEventListener("click", () => {
+            this.carouselContainerElement.scrollBy(-this.carouselItemWidth, 0);
+        });
         for (var i = 0; i < childNodes.length; i++) {
             this.carouselContainerElement.appendChild(childNodes[i])
         }
