@@ -1,4 +1,9 @@
 # Carousel Web Component
+
+<a href="https://bundlephobia.com/result?p=@technikhil/carousel-webcomponent">![npm bundle size](https://img.shields.io/bundlephobia/minzip/@technikhil/carousel-webcomponent?label=gzip%20size)</a> ![npm monthly downloads](https://img.shields.io/npm/dm/@technikhil/carousel-webcomponent?label=Monthly%20Downloads) ![liscense](https://img.shields.io/npm/l/@technikhil/carousel-webcomponent?label=Liscense) <a href="https://www.npmjs.com/package/@technikhil/carousel-webcomponent">![npm v](https://img.shields.io/npm/v/@technikhil/carousel-webcomponent)</a> ![GitHub last commit](https://img.shields.io/github/last-commit/technikhil314/carousel-web-component?label=Last%20Commit) ![Number of Dependancies](https://img.shields.io/badge/Depandancies-0-brightgreen)
+
+<a href="https://twitter.com/technikhil314">![Twitter Follow technikhil314](https://img.shields.io/twitter/follow/technikhil314?label=Follow%20Me&style=social)</a> <a href="https://github.com/technikhil314/carousel-web-component/fork">![GitHub forks](https://img.shields.io/github/forks/technikhil314/carousel-web-component?style=social)</a> <a href="https://github.com/technikhil314/carousel-web-component">![GitHub stars](https://img.shields.io/github/stars/technikhil314/carousel-web-component?style=social)</a> <a href="https://github.com/technikhil314/carousel-web-component/subscription">![GitHub watchers](https://img.shields.io/github/watchers/technikhil314/carousel-web-component?style=social)</a>
+
 #### **A tiny(1.2Kb), framework agnostic, light weight, zero dependancy, touch friendly carousel component**
 
 ## Why?
