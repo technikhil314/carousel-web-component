@@ -85,15 +85,15 @@ class CarouselComponent extends HTMLElement {
         const childNodes = [...this.childNodes];
         this.innerHTML = `
             <div class="carouselWrapper">
+                <button
+                    aria-label="Show previous"
+                    class="button is-text carouselControl carouselControlPrev"
+                ></button>
+                <button
+                    aria-label="Show next"
+                    class="button is-text carouselControl carouselControlNext"
+                ></button>
                 <div class="carouselContainer">
-                    <button
-                        aria-label="Show previous"
-                        class="button is-text carouselControl carouselControlPrev"
-                    ></button>
-                    <button
-                        aria-label="Show next"
-                        class="button is-text carouselControl carouselControlNext"
-                    ></button>
                 </div>
             </div>
         `;
