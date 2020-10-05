@@ -1,8 +1,22 @@
 # Carousel Web Component
 
-<a href="https://bundlephobia.com/result?p=@technikhil/carousel-webcomponent">![npm bundle size](https://img.shields.io/bundlephobia/minzip/@technikhil/carousel-webcomponent?label=gzip%20size)</a> ![npm monthly downloads](https://img.shields.io/npm/dm/@technikhil/carousel-webcomponent?label=Monthly%20Downloads) ![liscense](https://img.shields.io/npm/l/@technikhil/carousel-webcomponent?label=Liscense) <a href="https://www.npmjs.com/package/@technikhil/carousel-webcomponent">![npm v](https://img.shields.io/npm/v/@technikhil/carousel-webcomponent)</a> ![GitHub last commit](https://img.shields.io/github/last-commit/technikhil314/carousel-web-component?label=Last%20Commit) ![Number of Dependancies](https://img.shields.io/badge/Depandancies-0-brightgreen)
+[//]: <> (start placeholder for auto-badger)
 
-<a href="https://twitter.com/technikhil314">![Twitter Follow technikhil314](https://img.shields.io/twitter/follow/technikhil314?label=Follow%20Me&style=social)</a> <a href="https://github.com/technikhil314/carousel-web-component/fork">![GitHub forks](https://img.shields.io/github/forks/technikhil314/carousel-web-component?style=social)</a> <a href="https://github.com/technikhil314/carousel-web-component">![GitHub stars](https://img.shields.io/github/stars/technikhil314/carousel-web-component?style=social)</a> <a href="https://github.com/technikhil314/carousel-web-component/subscription">![GitHub watchers](https://img.shields.io/github/watchers/technikhil314/carousel-web-component?style=social)</a>
+
+[![Build Status](https://img.shields.io/travis/technikhil314/carousel-web-component.svg?style=flat-square)](https://travis-ci.org/technikhil314/carousel-web-component)
+[![version](https://img.shields.io/npm/v/carousel-webcomponent.svg?style=flat-square)](https://npmjs.org/carousel-webcomponent)
+[![size](https://img.shields.io/bundlephobia/min/carousel-webcomponent)](https://bundlephobia.com/result?p=carousel-webcomponent)
+[![license](https://img.shields.io/npm/l/carousel-webcomponent)](https://github.com/technikhil314/carousel-web-component/blob/master/LICENSE)
+
+[![dependancies](https://img.shields.io/librariesio/release/npm/carousel-webcomponent)](https://libraries.io/npm/carousel-webcomponent)
+[![all contributors](https://img.shields.io/github/all-contributors/technikhil314/carousel-web-component)](https://github.com/technikhil314/carousel-web-component/graphs/contributors)
+[![code of conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](https://github.com/technikhil314/carousel-web-component/blob/master/CODE_OF_CONDUCT.md)
+
+[![stargazers](https://img.shields.io/github/stars/technikhil314/carousel-web-component?style=social)](https://github.com/technikhil314/carousel-web-component/stargazers)
+[![number of forks](https://img.shields.io/github/forks/technikhil314/carousel-web-component?style=social)](https://github.com/technikhil314/carousel-web-component/fork)
+
+[//]: <> (end placeholder for auto-badger)
+
 
 #### **A tiny(1.2Kb), framework agnostic, light weight, zero dependancy, touch friendly carousel component**
 
