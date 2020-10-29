@@ -1,5 +1,8 @@
 name: publish to npm
-on: push
+on:
+  push:
+    tags:
+      - .*
 
 jobs:
   publish:
