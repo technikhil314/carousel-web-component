@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 12
       - name: install dependencies
-        run: npm install
+        run: npm ci
       - name: build using webpack
         run: npm run build
       - name: publish
