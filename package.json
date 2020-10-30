@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "carousel-webcomponent",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A tiny(1.2Kb), framework agnostic, light weight, zero dependancy, touch friendly carousel component",
   "scripts": {
     "build": "npx rimraf dist && npx webpack",
