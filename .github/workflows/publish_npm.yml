@@ -22,7 +22,7 @@ jobs:
         run: |
           npm run build
           cp package.json ./dist
-          cp readme.md ./dist
+          cp README.md ./dist
           cd dist
       - name: publish
         uses: JS-DevTools/npm-publish@v1
