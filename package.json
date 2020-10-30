@@ -8,7 +8,7 @@
     "clean": "npx rimraf dist",
     "start": "npx webpack-dev-server"
   },
-  "main": "dist/index.min.js",
+  "main": "index.min.js",
   "keywords": [
     "carousel",
     "web",
