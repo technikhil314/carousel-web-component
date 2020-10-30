@@ -1,8 +1,9 @@
-name: publish to npm
+name: publish
 on:
   push:
     tags:
       - .*
+      - v1.*  
 
 jobs:
   publish:
@@ -25,8 +26,6 @@ jobs:
       - run: cp README.md ./dist
       - name: publish
         run: |
-          cd ./dist
-          ls
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
