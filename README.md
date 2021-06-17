@@ -45,7 +45,7 @@ Most of the carousel components out there do not leverage latest css and javascr
 
 ## Documentation / How to use / Options / Customization
 
-The documentation is [hosted here](https://technikhil314.surge.sh/docs/carousel/introduction)
+The documentation is [hosted here](https://technikhil314.netlify.app/docs/carousel/introduction)
 
 ## If you liked my work, show some :heart: :star: the repo.
 
